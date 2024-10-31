@@ -9,6 +9,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     curl \
     make \
+    libpq-dev \
+    gcc \
+    netcat-openbsd \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
@@ -40,7 +43,7 @@ EXPOSE 8000
 COPY startup.sh /startup.sh
 RUN chmod +x /startup.sh
 
-# RUN dos2unix startup.sh
+#RUN dos2unix /startup.sh
 
-# Run the entrypoint script
+# Run the entrypoint scrip
 CMD ["/startup.sh"]

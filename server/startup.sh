@@ -1,6 +1,4 @@
 #!/bin/bash
-
-
 # Load environment variables from .env file if it exists
 if [ -f .env ]; then
     log "Loading environment variables from .env file"
