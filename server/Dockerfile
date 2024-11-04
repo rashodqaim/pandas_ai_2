@@ -18,10 +18,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Install Poetry
 RUN curl -sSL https://install.python-poetry.org | python3 -
 
-RUN apt-get update && apt-get install netcat-openbsd -y 
-
 # Add Poetry to PATH
 ENV PATH="/root/.local/bin:$PATH"
+
+ENV PYTHONPATH=/app
 
 # Copy the current directory contents into the container at /app
 COPY . /app
@@ -45,5 +45,10 @@ RUN chmod +x /startup.sh
 
 #RUN dos2unix /startup.sh
 
+<<<<<<< HEAD
 # Run the entrypoint scrip
 CMD ["/startup.sh"]
+=======
+# Run the entrypoint script
+CMD ["/startup.sh"]
+>>>>>>> 719043c62bf9e0740854d7367f757bdf1d3ee6b3
